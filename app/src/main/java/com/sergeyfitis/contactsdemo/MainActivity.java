@@ -44,6 +44,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         fabAdd = (FloatingActionButton) findViewById(R.id.fabAdd);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddContactActivity.class));
+            }
+        });
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         if (ActivityCompat.checkSelfPermission(this, READ_CONTACTS) == PERMISSION_GRANTED) {
             getSupportLoaderManager().initLoader(1, null, this).forceLoad();
         } else {
@@ -53,14 +65,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 ActivityCompat.requestPermissions(this, new String[]{READ_CONTACTS}, READ_CONTACTS_REQUEST);
             }
         }
-
-        fabAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO: 29.11.16 Implement it
-                Toast.makeText(MainActivity.this, "Не встиг зробити :)", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

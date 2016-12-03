@@ -2,4 +2,7 @@
     <string name="app_name">ContactsDemo</string>
     <string name="read_contacts_err">Дозвіл на читання контактів не надано.</string>
     <string name="go_to_settings">Перейти в налаштування</string>
+    <string name="name">Ім\'я</string>
+    <string name="phone_number">Номер телефону</string>
+    <string name="save">Зберегти</string>
 </resources>
